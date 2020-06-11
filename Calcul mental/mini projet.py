@@ -40,11 +40,17 @@ while running :
                 
 while game : 
     screen2 = pygame.display.set_mode((1920,1080))
+    background = pygame.image.load('assets/bg3.jpg')
+    screen.blit(background,(200,-200))
+    pygame.display.flip()
+    varText = ""
     for event in pygame.event.get():
         if event.type ==pygame.QUIT :
             game = False
             running= False
             pygame.quit()
+        if event.type == pygame.KEYDOWN:
+            varText = varText + pygame.key.name(event.key)
     
     
             
